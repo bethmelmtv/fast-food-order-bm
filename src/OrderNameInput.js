@@ -1,8 +1,11 @@
-
-
-export default function OrderNameInput( {setOrderName }) {
+export default function OrderNameInput({ setOrderName }) {
+  function handleChange(e) {
+    setOrderName(e.target.value);
+  }
   return (
-  <input onChange={(e) =>setOrderName(e.target.value)}>
-  </input>
-  )
+    <label>
+      Order Name
+      <input onChange={handleChange} />
+    </label>
+  );
 }
